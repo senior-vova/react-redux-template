@@ -1,9 +1,11 @@
 import { combineReducers, createStore, applyMiddleware, compose } from "redux";
 import thunkMiddleware from "redux-thunk";
+import { AuthReducer } from "./auth/auth.reducer";
 // import { reducer as formReducer } from "redux-form";
 
 const reducers = combineReducers({
-  //   form: formReducer, // if need
+  //   form: formReducer,
+  auth: AuthReducer,
 });
 
 type RootReducerType = typeof reducers;
