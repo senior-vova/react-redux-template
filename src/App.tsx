@@ -1,5 +1,5 @@
 import React from "react";
-import { Navigate, Route, Routes } from "react-router";
+import { Route, Routes } from "react-router";
 import { AuthGuard } from "./guards";
 import { HomePage, NotFoundPage } from "./pages";
 import { Guard } from "./utils/guard";
