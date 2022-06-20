@@ -1,0 +1,14 @@
+FROM node:16.13.2-alpine
+
+WORKDIR /var/react-app
+
+COPY package*.json .
+
+RUN npm install --prefer-offline --no-audit --progress=false
+
+COPY . .
+
+EXPOSE 3000
+
+CMD [ "npm", "run", "start" ]
+
