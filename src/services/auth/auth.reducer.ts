@@ -1,14 +1,9 @@
 import { Dispatch } from "redux";
 import { AuthApi } from "./auth.api";
-import {
-  ActionType,
-  ActionTypes,
-  ISignIn,
-  ISignUp,
-  StateType,
-} from "./auth.interface";
+import { ISignIn, ISignUp, StateType } from "./auth.interface";
 import { token } from "../../utils/localstorage.token";
-import { AuthActions } from "./auth.actions";
+import { ActionTypes, AuthActions } from "./auth.actions";
+import { ActionType } from "../../utils/helpers";
 
 const initialState: StateType = {
   isLogined: false,
@@ -28,7 +23,7 @@ export const AuthReducer = (
     case ActionTypes.signUp:
       return { ...initialState, isLogined: true };
     case ActionTypes.error:
-      return { ...initialState, error: action.msg };
+      return { ...initialState, error: action.payload };
     case ActionTypes.logout:
       return { ...initialState };
     default:
